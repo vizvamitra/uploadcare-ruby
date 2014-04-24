@@ -3,6 +3,8 @@ require 'ostruct'
 module Uploadcare
   class Api
     class File < OpenStruct
+      include Uploadcare::Operations
+
       def initialize api, uuid_or_cdn_url, data=nil
         result = Uploadcare::Parser.parse_file_string uuid_or_cdn_url
         
